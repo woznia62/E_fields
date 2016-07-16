@@ -6,6 +6,8 @@ This program is a skeleton for plotting electric fields. It works by
 superimposing point charges to create a discrete distribution which can be taken
 as continuous in the limit that the distance between charges is small.
 Several functions show how this can be done to create some typical distributions.
+All of the sample distributions will be saved as a pdf file in the working
+directory.
 """
 
 
@@ -15,6 +17,10 @@ from matplotlib.patches import Circle
 
 
 def mkcharge(ax, ay, q, x, y):
+    """
+    Function: mkcharge()
+    This function creates a point charge of magnitude q at position (ax,ay).
+    """
     Ex = q*(x-ax) / ((x-ax)**2 + (y-ay)**2)**(1.5)
     Ey = q*(y-ay) / ((x-ax)**2 + (y-ay)**2)**(1.5)
     if q > 0:
@@ -217,8 +223,16 @@ def octupole(a):
 
 
 def demo():
+    """
+    Function: demo()
+    This function computes and plots 5 distributions.
+    WARNING - This takes some time to run! It's slow!
+    """
     dipole(0.5)
     quadrupole(1)
     octupole(1)
     capacitor(0.5)
     planes(1,75)
+
+# note: add any functions at this point which you wish to run with the program,
+# otherwise import efields into the python console and run functions as desired
