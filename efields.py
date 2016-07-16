@@ -1,5 +1,14 @@
 #!/usr/local/bin/python3.5
 
+"""
+Program: efields.py
+This program is a skeleton for plotting electric fields. It works by
+superimposing point charges to create a discrete distribution which can be taken
+as continuous in the limit that the distance between charges is small.
+Several functions show how this can be done to create some typical distributions.
+"""
+
+
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.patches import Circle
